@@ -99,6 +99,7 @@ Task Schema
   "status": "pending/completed",
   "userId": "ObjectId"
 }
+```
 Authentication Flow
 (1) Signup
 
