@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify OTP</title>
+    <link rel="stylesheet" href="/css/verify.css">
+</head>
+<body>
+
+<div id="verify-container">
+
+  <div class="verify-card">
+
+    <h2 class="verify-title">OTP Verification </h2>
+    <p class="verify-subtitle">
+      Enter the 6-digit code sent to your email
+    </p>
+
+    <form action="/verify" method="POST" class="verify-form">
+
+      <input type="hidden" name="email" value="<%= email %>" />
+
+      <input 
+        type="text" 
+        name="otp" 
+        placeholder="Enter OTP"
+        maxlength="6"
+        required 
+        class="otp-input"
+      />
+
+      <button type="submit" class="verify-btn">
+        Verify OTP
+      </button>
+
+    </form>
+
+    <form action="/resend-otp" method="POST" class="resend-form">
+      <input type="hidden" name="email" value="<%= email %>" />
+      <button type="submit" class="resend-btn">
+        Resend OTP
+      </button>
+    </form>
+
+  </div>
+
+</div>
+
+</body>
+</html>

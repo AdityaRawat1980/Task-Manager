@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+
+<div id="container">
+
+  <header class="header">
+    <h2 class="app-title">Task Manager</h2>
+    <a href="/logout" class="logout-btn">Logout</a>
+  </header>
+
+  <section class="add-task-section">
+    <form action="/" method="POST" class="task-form">
+      <input 
+        type="text" 
+        name="title" 
+        placeholder="Task title" 
+        required 
+        class="input-field"
+      />
+
+      <textarea 
+        name="description" 
+        placeholder="Task description"
+        class="textarea-field"
+      ></textarea>
+
+      <button type="submit" class="add-btn">Add Task</button>
+    </form>
+  </section>
+
+  <hr class="divider">
+
+  <section class="task-list-section">
+    <ul class="task-list">
+      <% tasks.forEach(task => { %>
+        <li class="task-card <%= task.status %>">
+
+          <div class="task-content">
+            <h3 class="task-title">
+              <%= task.title %>
+              <% if (task.status === "completed") { %> 
+                <span class="completed-icon"> ￣へ￣ (nice)</span>
+              <% } %>
+            </h3>
+
+            <p class="task-description">
+              <%= task.description %>
+            </p>
+
+            <p class="task-status">
+              Status: <span class="status-text"><%= task.status %></span>
+            </p>
+          </div>
+
+          <div class="task-actions">
+
+            <!-- Toggle -->
+            <form action="/toggle/<%= task._id %>" method="POST">
+              <button class="toggle-btn">
+                Mark <%= task.status === "pending" ? "Completed" : "Pending" %>
+              </button>
+            </form>
+
+            <!-- Edit -->
+            <a href="/edit/<%= task._id %>" class="edit-btn">Edit</a>
+
+            <!-- Delete -->
+            <form action="/delete/<%= task._id %>" method="POST">
+              <button class="delete-btn">Delete</button>
+            </form>
+
+          </div>
+
+        </li>
+      <% }) %>
+    </ul>
+  </section>
+
+</div>
+
+</body>
+</html>
