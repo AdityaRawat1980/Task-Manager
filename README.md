@@ -12,11 +12,6 @@ Render Deployment
 
 This project demonstrates real-world authentication, secure user management, and task CRUD operations.
 
-Live Demo
-
-🔗 Live App: https://your-app-name.onrender.com  
-(Replace with your actual Render URL)
-
 Features
 
 -Authentication
@@ -131,21 +126,11 @@ Stored in HTTP-only cookie
 
 Access granted to dashboard
 
-- Environment Variables
-
-Create a .env file in the root folder:
-
-MONGO_URI=your_mongodb_atlas_connection_string
-JWT_SECRET=your_secret_key
-EMAIL_USER=yourgmail@gmail.com
-EMAIL_PASS=your_app_password
-
-
 - Installation (Local Setup)
 
 (1️) Clone the repository
 
-git clone [https://github.com/YOUR_USERNAME/Task-Manager.git
+git clone https://github.com/AdityaRawat1980/Task-Manager.git
 cd Task-Manager
 
 (2️) Install dependencies
@@ -160,7 +145,7 @@ nodemon Server.js
 
 Visit:
 
-http://localhost:3000/signup
+/signup 
 
 Deployment
 
@@ -203,8 +188,6 @@ Rate Limiting
 
 Hash OTP in Database
 
-React Frontend
-
 Role-Based Access Control
 
 Author
@@ -213,7 +196,3 @@ Aditya Rawat
 BCA Student | Full Stack Developer
 
 GitHub: https://github.com/AdityaRawat1980
-
-If You Like This Project
-
-Give it a * on GitHub!
