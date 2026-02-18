@@ -63,15 +63,14 @@ TASK-MANAGER
 │
 ├── public
 │ └── css
-│ ├── home.css
-│ ├── auth.css
-│ └── verify.css
+│   ├── home.css
+│   ├── auth.css
+│   └── verify.css
 │
 ├── .gitignore
 ├── package.json
 ├── package-lock.json
 |── Server.js
-|──.env
 |──node_modules
 
 Database Design
@@ -122,9 +121,9 @@ Account verification checked
 
 JWT token generated
 
-Stored in HTTP-only cookie
+Stored an HTTP-only cookie
 
-Access granted to dashboard
+Access granted to the dashboard
 
 - Installation (Local Setup)
 
