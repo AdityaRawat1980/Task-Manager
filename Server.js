@@ -10,7 +10,7 @@ import { fileURLToPath } from "url";
 import userModel from "./schema/userSchema.js";
 import taskModel from "./schema/taskSchema.js";
 import authMiddleware from "./middleware/auth.js";
-import { sendOTP } from "./Verify/sendMail.js";
+import { sendOTP } from "./verify/sendMail.js";
 
 dotenv.config();
 const app = express();
