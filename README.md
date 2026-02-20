@@ -1,83 +1,141 @@
 Task Manager with JWT & Email OTP Verification
 
-A secure full-stack Task Manager web application built using:
+A secure, production-ready full-stack Task Manager web application implementing modern authentication and authorization practices using JWT, Email OTP verification, and MongoDB Atlas.
+
+This project demonstrates real-world backend architecture, secure authentication flow, middleware protection, and user-specific task isolation.
+
+Live Demo:
+https://task-manager-1-ip8b.onrender.com
+
+Project Overview
+
+This application allows users to securely:
+
+Register with email verification (OTP-based)
+
+Authenticate using JWT (HTTP-only cookies)
+
+Manage personal tasks
+
+Perform full CRUD operations
+
+Access protected routes securely
+
+Built following modern backend security best practices.
+
+
+Tech Stack
+
+Backend
 
 Node.js
+
 Express.js
+
 MongoDB Atlas
-EJS
-JWT Authentication
-Email OTP Verification
-Render Deployment
 
-This project demonstrates real-world authentication, secure user management, and task CRUD operations.
+Mongoose
 
-Features
+JWT (jsonwebtoken)
 
--Authentication
--User Signup
--Email OTP Verification
--Resend OTP
--Secure Login (JWT)
--HTTP-only cookies
--Password hashing (bcrypt)
--Account verification required before login
+bcrypt
+
+Nodemailer
+
+Frontend
+
+EJS (Templating Engine)
+
+HTML5
+
+CSS3
+
+Deployment
+
+Render (Cloud Hosting)
+
+MongoDB Atlas (Cloud Database)
+
+Core Features
+Authentication & Authorization
+
+User Signup with email OTP verification
+
+Resend OTP functionality
+
+Secure Login with JWT
+
+HTTP-only cookies for token storage
+
+Password hashing using bcrypt
+
+Account verification required before login
+
+Middleware-protected routes
 
 Task Management
 
-- Add Task
-- Edit Task
-- Delete Task
-- Mark as Completed / Pending
-- User-specific task isolation
+Add Task
 
-Security Features
+Edit Task
 
-- JWT Authentication
-- OTP Expiration (5 minutes)
-- Environment variables for secrets
-- Middleware-protected routes
-- MongoDB Atlas cloud database
+Delete Task
 
+Toggle Task Status (Pending / Completed)
+
+User-specific task isolation
+
+Secure ownership validation
+
+Security Implementation
+
+JWT-based authentication
+
+OTP expiration (5 minutes validity)
+
+Environment variables for sensitive credentials
+
+Middleware route protection
+
+MongoDB Atlas secured cluster
+
+Password hashing with bcrypt
+
+HTTP-only cookies (prevent XSS token access)
 
 Project Structure
-
 TASK-MANAGER
 │
 ├── middleware
-│ └── auth.js
+│   └── auth.js
 │
 ├── schema
-│ ├── userSchema.js
-│ └── taskSchema.js
+│   ├── userSchema.js
+│   └── taskSchema.js
 │
 ├── verify
-│ └── sendMail.js
+│   └── sendMail.js
 │
 ├── views
-│ ├── Home.ejs
-│ ├── Login.ejs
-│ ├── Signup.ejs
-│ ├── Verify.ejs
-│ └── EditTask.ejs
+│   ├── Home.ejs
+│   ├── Login.ejs
+│   ├── Signup.ejs
+│   ├── Verify.ejs
+│   └── EditTask.ejs
 │
 ├── public
-│ └── css
-│   ├── home.css
-│   ├── auth.css
-│   └── verify.css
+│   └── css
+│       ├── home.css
+│       ├── auth.css
+│       └── verify.css
 │
 ├── .gitignore
 ├── package.json
 ├── package-lock.json
-|── Server.js
-|──node_modules
+└── Server.js
 
-Database Design
-
+Database Schema Design
 User Schema
-
-```json
 {
   "email": "string",
   "username": "string",
@@ -93,9 +151,10 @@ Task Schema
   "status": "pending/completed",
   "userId": "ObjectId"
 }
-```
+
+
 Authentication Flow
-(1) Signup
+1️ Signup
 
 Password hashed using bcrypt
 
@@ -105,79 +164,35 @@ OTP sent to registered email
 
 User redirected to verification page
 
-(2️) OTP Verification
+2️ OTP Verification
 
-OTP checked for validity
+OTP validated
 
-Expiry verified (5 minutes)
+Expiry checked (5 minutes)
 
 Account activated
 
-(3️) Login
+3️ Login
 
-Password validated
+Password verified
 
 Account verification checked
 
 JWT token generated
 
-Stored an HTTP-only cookie
+Stored in an HTTP-only cookie
 
 Access granted to the dashboard
 
-- Installation (Local Setup)
-
-(1️) Clone the repository
-
-git clone https://github.com/AdityaRawat1980/Task-Manager.git
-cd Task-Manager
-
-(2️) Install dependencies
-
-npm install
-
-(3️) Create .env file and add required environment variables.
-
-(4️) Run the server
-
-nodemon Server.js
-
-Visit:
-
-/signup 
 
 Deployment
-
-The application is deployed using:
 
 MongoDB Atlas (Cloud Database)
 
 Render (Node.js Hosting)
 
 
-Technologies Used
-
-Node.js
-
-Express.js
-
-MongoDB Atlas
-
-Mongoose
-
-EJS
-
-JWT (jsonwebtoken)
-
-bcrypt
-
-Nodemailer
-
-HTML5
-
-CSS3
-
-(Future Improvements)
+Future Improvements
 
 Forgot Password System
 
@@ -189,9 +204,13 @@ Hash OTP in Database
 
 Role-Based Access Control
 
+Refresh Token Implementation
+
+
 Author
 
 Aditya Rawat
 BCA Student | Full Stack Developer
 
-GitHub: https://github.com/AdityaRawat1980
+GitHub:
+https://github.com/AdityaRawat1980
